@@ -11,6 +11,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { TodoList } from "./TodoList";
 import axios from "axios";
+import { Add } from "@mui/icons-material";
 
 type Variables = {
   title: string;
@@ -58,7 +59,13 @@ export const Work2 = () => {
               <CircularProgress size={20} sx={{ color: "text.disabled" }} />
             </Button>
           ) : (
-            <Button type="submit" variant="contained" disabled={!value}>
+            <Button
+              type="submit"
+              variant="contained"
+              disabled={!value}
+              startIcon={<Add />}
+              sx={{ flexShrink: 0 }}
+            >
               追加
             </Button>
           )}
