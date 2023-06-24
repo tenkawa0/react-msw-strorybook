@@ -26,7 +26,7 @@ export const TodoListItem: React.FC<Props> = ({
           size="small"
           edge="end"
           onClick={() => handleDelete(todo)}
-          // aria-label="削除"
+          aria-label="削除"
         >
           <Delete fontSize="small" />
         </IconButton>
