@@ -61,16 +61,16 @@ export const AddTodos: Story = {
 
     //↓ Todoが追加されているか確認、でもエラーになる
     //error: Found multiple elements with the role "listitem"
-    // await waitFor(() => {
-    //   const list = canvas.getByRole("list");
-    //   expect(within(list).getByRole("listitem")).toBeInTheDocument();
-    // });
-
-    //↓複数確認のときはgetAllByRole()を使用する
     await waitFor(() => {
       const list = canvas.getByRole("list");
-      expect(within(list).getAllByRole("listitem")).toHaveLength(2);
+      expect(within(list).getByRole("listitem")).toBeInTheDocument();
     });
+
+    //↓複数確認のときはgetAllByRole()を使用する
+    // await waitFor(() => {
+    //   const list = canvas.getByRole("list");
+    //   expect(within(list).getAllByRole("listitem")).toHaveLength(2);
+    // });
   },
 };
 
